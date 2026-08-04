@@ -1,0 +1,160 @@
+.contact__heading {
+  font-size: 1.6rem;
+  color: var(--text);
+  margin: 4px 0 14px;
+}
+
+.contact__sub {
+  max-width: 580px;
+  margin-bottom: 32px;
+}
+
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  max-width: 560px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 26px;
+}
+
+.contact__field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.contact__field label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-faint);
+}
+
+.contact__field label::before {
+  content: '"';
+  color: var(--text-faint);
+}
+
+.contact__field label::after {
+  content: '":';
+  color: var(--text-faint);
+}
+
+.contact__field input,
+.contact__field textarea {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  padding: 10px 12px;
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  resize: vertical;
+}
+
+.contact__field input:focus,
+.contact__field textarea:focus {
+  border-color: var(--accent-dim);
+}
+
+.contact__submit {
+  border: none;
+  align-self: flex-start;
+  margin-top: 4px;
+}
+
+.contact__direct {
+  margin-top: 24px;
+  font-size: 0.85rem;
+  color: var(--text-faint);
+}
+
+.contact__direct a {
+  color: var(--accent);
+}
+
+.contact__direct a:hover {
+  opacity: 0.8;
+}
+
+/* new added styling */
+
+/* Container */
+.contact__direct {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.contact__direct-text {
+  color: #8b8b93;
+  font-size: 14px;
+  margin-bottom: 20px;
+  letter-spacing: 0.5px;
+}
+
+/* Icons wrapper */
+.contact__socials {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Each social link */
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 24px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  color: #e5e5e7;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+/* Hover effect */
+.social-link:hover {
+  background: rgba(255, 138, 76, 0.1);
+  border-color: #ff8a4c;
+  color: #ff8a4c;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(255, 138, 76, 0.15);
+}
+
+/* Icon */
+.social-icon {
+  font-size: 20px;
+  transition: transform 0.3s ease;
+}
+
+.social-link:hover .social-icon {
+  transform: scale(1.15);
+}
+
+/* Label */
+.social-label {
+  font-family: 'Fira Code', 'Courier New', monospace;
+}
+
+/* Mobile responsive */
+@media (max-width: 600px) {
+  .contact__socials {
+    gap: 12px;
+  }
+  
+  .social-link {
+    padding: 10px 18px;
+    font-size: 13px;
+  }
+  
+  .social-icon {
+    font-size: 18px;
+  }
+}

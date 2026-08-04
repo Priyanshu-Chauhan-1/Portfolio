@@ -1,0 +1,92 @@
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(11, 15, 20, 0.7);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.nav--scrolled {
+  border-bottom-color: var(--border);
+  background: rgba(11, 15, 20, 0.92);
+}
+
+.nav__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav__logo {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text);
+}
+
+.nav__prompt {
+  color: var(--accent);
+}
+
+.nav__routes {
+  display: flex;
+  gap: 24px;
+}
+
+.nav__route {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.15s ease;
+}
+
+.nav__route:hover {
+  color: var(--accent);
+}
+
+.nav__method {
+  color: var(--text-faint);
+  font-size: 0.68rem;
+}
+
+.nav__toggle {
+  display: none;
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  font-size: 0.75rem;
+  padding: 6px 10px;
+  border-radius: 4px;
+}
+
+.nav__mobile {
+  display: none;
+}
+
+@media (max-width: 720px) {
+  .nav__routes {
+    display: none;
+  }
+  .nav__toggle {
+    display: block;
+  }
+  .nav__mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 0 24px 20px;
+    border-top: 1px solid var(--border-soft);
+    padding-top: 16px;
+  }
+  .nav__mobile .nav__route {
+    padding: 10px 0;
+  }
+}
