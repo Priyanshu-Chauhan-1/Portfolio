@@ -1,4 +1,5 @@
-FROM eclipse-temurin:17-jdk-alpine AS builder
+# Stage 1: Build with Java 21
+FROM eclipse-temurin:21-jdk-alpine AS builder
 
 WORKDIR /app
 
@@ -12,7 +13,8 @@ COPY src ./src
 
 RUN ./mvnw clean package -DskipTests
 
-FROM eclipse-temurin:17-jre-alpine
+# Stage 2: Run with Java 21
+FROM eclipse-temurin:21-jre-alpine
 
 WORKDIR /app
 
