@@ -1,160 +1,328 @@
-.contact__heading {
-  font-size: 1.6rem;
-  color: var(--text);
-  margin: 4px 0 14px;
-}
-
-.contact__sub {
-  max-width: 580px;
-  margin-bottom: 32px;
-}
-
-.contact__form {
+/* Contact Buttons Container */
+.contact__buttons {
   display: flex;
   flex-direction: column;
-  gap: 18px;
-  max-width: 560px;
-  background: var(--bg-elevated);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 26px;
-}
-
-.contact__field {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.contact__field label {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  color: var(--text-faint);
-}
-
-.contact__field label::before {
-  content: '"';
-  color: var(--text-faint);
-}
-
-.contact__field label::after {
-  content: '":';
-  color: var(--text-faint);
-}
-
-.contact__field input,
-.contact__field textarea {
-  background: var(--bg);
-  border: 1px solid var(--border);
-  border-radius: 5px;
-  padding: 10px 12px;
-  color: var(--text);
-  font-family: var(--font-sans);
-  font-size: 0.9rem;
-  resize: vertical;
-}
-
-.contact__field input:focus,
-.contact__field textarea:focus {
-  border-color: var(--accent-dim);
-}
-
-.contact__submit {
-  border: none;
-  align-self: flex-start;
-  margin-top: 4px;
-}
-
-.contact__direct {
-  margin-top: 24px;
-  font-size: 0.85rem;
-  color: var(--text-faint);
-}
-
-.contact__direct a {
-  color: var(--accent);
-}
-
-.contact__direct a:hover {
-  opacity: 0.8;
-}
-
-/* new added styling */
-
-/* Container */
-.contact__direct {
-  margin-top: 60px;
-  text-align: center;
-}
-
-.contact__direct-text {
-  color: #8b8b93;
-  font-size: 14px;
-  margin-bottom: 20px;
-  letter-spacing: 0.5px;
-}
-
-/* Icons wrapper */
-.contact__socials {
-  display: flex;
-  justify-content: center;
   gap: 20px;
-  flex-wrap: wrap;
+  max-width: 550px;
+  margin: 40px auto 0;
 }
 
-/* Each social link */
-.social-link {
+/* Wrapper for email button dropdown */
+.contact-btn-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+/* Individual Contact Button - Works for both <a> and <button> */
+.contact-btn,
+button.contact-btn {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 12px 24px;
+  gap: 20px;
+  width: 100%;
+  padding: 20px 24px;
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 12px;
   color: #e5e5e7;
   text-decoration: none;
-  font-size: 14px;
-  font-weight: 500;
+  text-align: left;
+  font-family: inherit;
+  font-size: inherit;
   transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
-/* Hover effect */
-.social-link:hover {
-  background: rgba(255, 138, 76, 0.1);
-  border-color: #ff8a4c;
-  color: #ff8a4c;
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(255, 138, 76, 0.15);
+/* Reset button-specific defaults */
+button.contact-btn {
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+/* Hover Effect - Lift up and glow */
+.contact-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border-color: rgba(255, 138, 76, 0.5);
+  background: rgba(255, 138, 76, 0.08);
+}
+
+/* Active state (when dropdown is open) */
+.contact-btn.active {
+  border-color: rgba(255, 138, 76, 0.5);
+  background: rgba(255, 138, 76, 0.08);
+}
+
+/* Shine effect on hover */
+.contact-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 138, 76, 0.1),
+    transparent
+  );
+  transition: left 0.6s ease;
+  pointer-events: none;
+}
+
+.contact-btn:hover::before {
+  left: 100%;
 }
 
 /* Icon */
-.social-icon {
-  font-size: 20px;
-  transition: transform 0.3s ease;
+.contact-btn__icon {
+  font-size: 32px;
+  color: #ff8a4c;
+  flex-shrink: 0;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
-.social-link:hover .social-icon {
-  transform: scale(1.15);
+.contact-btn:hover .contact-btn__icon {
+  transform: scale(1.15) rotate(5deg);
+}
+
+/* Content Container */
+.contact-btn__content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+  min-width: 0;
+  text-align: left;
 }
 
 /* Label */
-.social-label {
-  font-family: 'Fira Code', 'Courier New', monospace;
+.contact-btn__label {
+  font-size: 16px;
+  font-weight: 600;
+  color: #e5e5e7;
+  letter-spacing: 0.5px;
+  text-align: left;
 }
 
-/* Mobile responsive */
+/* Value (email/username) */
+.contact-btn__value {
+  font-size: 14px;
+  color: #8b8b93;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: left;
+}
+
+/* Arrow (for links) */
+.contact-btn__arrow {
+  font-size: 24px;
+  color: #8b8b93;
+  transition: transform 0.3s ease, color 0.3s ease;
+  flex-shrink: 0;
+}
+
+.contact-btn:hover .contact-btn__arrow {
+  transform: translateX(8px);
+  color: #ff8a4c;
+}
+
+/* Chevron icon (for email button) */
+.contact-btn__chevron {
+  color: #8b8b93;
+  transition: transform 0.3s ease, color 0.3s ease;
+  flex-shrink: 0;
+}
+
+.contact-btn__chevron.rotated {
+  transform: rotate(180deg);
+  color: #ff8a4c;
+}
+
+/* Specific Button Colors on Hover */
+.contact-btn--email:hover .contact-btn__icon {
+  color: #EA4335;
+}
+
+.contact-btn--github:hover .contact-btn__icon {
+  color: #ffffff;
+}
+
+.contact-btn--linkedin:hover .contact-btn__icon {
+  color: #0A66C2;
+}
+
+/* Modern Compact Dropdown */
+.email-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  min-width: 200px;
+  background: rgba(15, 15, 20, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 6px;
+  backdrop-filter: blur(20px);
+  box-shadow: 
+    0 10px 40px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 138, 76, 0.1);
+  animation: dropdownFade 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 100;
+}
+
+@keyframes dropdownFade {
+  from {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Dropdown Item */
+.email-dropdown__item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 9px 12px;
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  color: #d1d1d6;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font-family: inherit;
+  text-align: left;
+  outline: none;
+}
+
+.email-dropdown__item:hover {
+  background: rgba(255, 138, 76, 0.1);
+  color: #ff8a4c;
+}
+
+/* Dropdown Icon */
+.email-dropdown__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  color: #8b8b93;
+  transition: color 0.15s ease;
+  flex-shrink: 0;
+}
+
+.email-dropdown__item:hover .email-dropdown__icon {
+  color: #ff8a4c;
+}
+
+/* Divider */
+.email-dropdown__divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.06);
+  margin: 4px 8px;
+}
+
+/* Arrow pointing to button */
+.email-dropdown::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  right: 20px;
+  width: 10px;
+  height: 10px;
+  background: rgba(15, 15, 20, 0.95);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  transform: rotate(45deg);
+}
+
+/* Availability Status Badge */
+.contact__availability {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 50px;
+  color: #8b8b93;
+  font-size: 14px;
+  font-family: 'Fira Code', monospace;
+}
+
+.status-dot {
+  width: 10px;
+  height: 10px;
+  background: #4ade80;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+  box-shadow: 0 0 10px #4ade80, 0 0 20px rgba(74, 222, 128, 0.5);
+}
+
+@keyframes pulse {
+  0%, 100% { 
+    opacity: 1; 
+    transform: scale(1); 
+  }
+  50% { 
+    opacity: 0.6; 
+    transform: scale(1.2); 
+  }
+}
+
+/* Mobile Responsive */
 @media (max-width: 600px) {
-  .contact__socials {
-    gap: 12px;
+  .contact__buttons {
+    gap: 15px;
   }
   
-  .social-link {
-    padding: 10px 18px;
+  .contact-btn {
+    padding: 16px 18px;
+    gap: 15px;
+  }
+  
+  .contact-btn__icon {
+    font-size: 26px;
+  }
+  
+  .contact-btn__label {
+    font-size: 14px;
+  }
+  
+  .contact-btn__value {
+    font-size: 12px;
+  }
+  
+  .contact-btn__arrow {
+    font-size: 20px;
+  }
+  
+  /* Mobile dropdown - full width */
+  .email-dropdown {
+    left: 0;
+    right: 0;
+    min-width: auto;
+  }
+  
+  .email-dropdown__item {
+    padding: 10px 14px;
     font-size: 13px;
   }
   
-  .social-icon {
-    font-size: 18px;
+  .email-dropdown::before {
+    right: auto;
+    left: 30px;
   }
 }
