@@ -2,7 +2,7 @@
 
 > Modern, terminal-inspired developer portfolio built with React.
 
-** Live:** [your-portfolio.vercel.app](https://your-portfolio.vercel.app)
+Live: [CheckOut My Portfolio](https://portfolio-puce-phi-yldcx5c7c6.vercel.app/)
 
 ## Features
 
@@ -22,7 +22,7 @@
 
 ## Run Locally
 
-\`\`\`bash
+bash
 # Clone the repo
 git clone https://github.com/Priyanshu-Chauhan-1/Portfolio.git
 
@@ -34,30 +34,27 @@ npm install
 
 # Start dev server
 npm run dev
-\`\`\`
-
 
 ## Build
 
-\`\`\`bash
+bash
 npm run build      # Production build
 npm run preview    # Preview build
-\`\`\`
+
 
 ## Project Structure
 
-\`\`\`
-Portfolio/
-└── frontend/
-    ├── src/
-    │   ├── components/
-    │   ├── App.jsx
-    │   └── main.jsx
-    ├── package.json
-    └── vite.config.js
-\`\`\`
 
-## 🌐 Deployment
+Portfolio/
+- frontend/
+- src/
+    - components/
+    - App.jsx
+    - main.jsx
+    - package.json
+    - vite.config.js
+
+## Deployment
 
 Deploy to Vercel:
 1. Push to GitHub
@@ -65,7 +62,7 @@ Deploy to Vercel:
 3. Set Root Directory: `frontend`
 4. Deploy! 
 
-## 📬 Connect
+## Connect
 
 - Email: [priyanshuchauhan19705@gmail.com](mailto:priyanshuchauhan19705@gmail.com)
 - GitHub: [@Priyanshu-Chauhan-1](https://github.com/Priyanshu-Chauhan-1)
