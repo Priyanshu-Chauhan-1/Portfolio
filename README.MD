@@ -1,40 +1,76 @@
-# 🚀 Priyanshu Chauhan — Portfolio
+# Priyanshu Chauhan — Portfolio
 
-Modern developer portfolio built with **React** + **Spring Boot**.
+> Modern, terminal-inspired developer portfolio built with React.
 
-**🌐 Live:** [your-portfolio.vercel.app](https://your-portfolio.vercel.app)
+** Live:** [your-portfolio.vercel.app](https://your-portfolio.vercel.app)
 
-## 🛠️ Tech Stack
-- **Frontend:** React, Vite, CSS3
-- **Backend:** Spring Boot, Java 17, Maven
-- **Deployment:** Vercel (Frontend) + Render (Backend)
-- **Email Service:** JavaMailSender + Gmail SMTP
+## Features
 
-## ✨ Features
 - Fully responsive design
-- Working contact form with email delivery
-- Modern dark theme with animations
-- Optimized for performance
+- Modern dark theme with orange accents  
+- Fast performance with Vite
+- Smart multi-option contact system
+- Smooth animations and micro-interactions
+- Accessible and SEO-friendly
 
-## 🚀 Run Locally
+## Tech Stack
 
-**Frontend:**
+- **Framework:** React 18 + Vite
+- **Styling:** CSS3, Custom animations
+- **Icons:** React Icons
+- **Deployment:** Vercel
+
+## Run Locally
+
 \`\`\`bash
-cd frontend
+# Clone the repo
+git clone https://github.com/Priyanshu-Chauhan-1/Portfolio.git
+
+# Navigate to frontend
+cd Portfolio/frontend
+
+# Install dependencies
 npm install
+
+# Start dev server
 npm run dev
 \`\`\`
 
-**Backend:**
+
+## Build
+
 \`\`\`bash
-cd backend
-mvn spring-boot:run
+npm run build      # Production build
+npm run preview    # Preview build
 \`\`\`
 
+## Project Structure
+
+\`\`\`
+Portfolio/
+└── frontend/
+    ├── src/
+    │   ├── components/
+    │   ├── App.jsx
+    │   └── main.jsx
+    ├── package.json
+    └── vite.config.js
+\`\`\`
+
+## 🌐 Deployment
+
+Deploy to Vercel:
+1. Push to GitHub
+2. Import to Vercel
+3. Set Root Directory: `frontend`
+4. Deploy! 
+
 ## 📬 Connect
-- Email: priyanshuchauhan19705@gmail.com
+
+- Email: [priyanshuchauhan19705@gmail.com](mailto:priyanshuchauhan19705@gmail.com)
 - GitHub: [@Priyanshu-Chauhan-1](https://github.com/Priyanshu-Chauhan-1)
 - LinkedIn: [priyanshuchauhan1](https://www.linkedin.com/in/priyanshuchauhan1/)
 
 ---
-Made with ❤️ by Priyanshu Chauhan
+
+Made with ❤️ by [Priyanshu Chauhan](https://github.com/Priyanshu-Chauhan-1)
